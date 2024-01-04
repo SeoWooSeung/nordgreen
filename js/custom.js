@@ -7,7 +7,7 @@ $(function () {
         dots: false,
         speed:1500,
         autoplaySpeed:4000,
-        // fade: true,
+        fade: true,
 
     });
     
@@ -43,6 +43,7 @@ $(function () {
         dots: false,
         slidesToShow: 4,
         slidesToScroll: 4,
+        speed:1500,
     });
 
 
@@ -55,11 +56,11 @@ $(function () {
     });
 
 
-    $('.visual_sub_slid .arrows .left').on('click', function () {
+    $('.visual_sub_slide .arrows .left').on('click', function () {
         $('.sub_slide').slick('slickPrev')
     });
 
-    $('.visual_sub_slid .arrows .right').on('click', function () {
+    $('.visual_sub_slide .arrows .right').on('click', function () {
         $('.sub_slide').slick('slickNext')
     });
 
