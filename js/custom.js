@@ -5,6 +5,8 @@ $(function () {
         autoplay: true,
         pauseOnHover: false,
         dots: false,
+        speed:1500,
+        autoplaySpeed:4000,
         // fade: true,
 
     });
