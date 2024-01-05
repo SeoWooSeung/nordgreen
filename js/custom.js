@@ -8,7 +8,6 @@ $(function () {
         speed:1500,
         autoplaySpeed:4000,
         fade: true,
-
     });
     
 
@@ -44,6 +43,22 @@ $(function () {
         slidesToShow: 4,
         slidesToScroll: 4,
         speed:1500,
+        responsive:[
+            {
+                breakpoint: 1200,
+                settings : {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            } ,
+            {
+                breakpoint: 769,
+                settings : {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }            
+        ],
     });
 
 
@@ -70,6 +85,12 @@ $(function () {
     })
 
     
+    $('.mbt').on("click", function () {
+        $('.gnb').toggleClass('on');
+        $('.h1').toggleClass('on');
+        $('.header').toggleClass('on');
+        $('.icon').toggleClass('on');
+    })
 
 
     
