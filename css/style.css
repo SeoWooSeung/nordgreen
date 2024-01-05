@@ -766,7 +766,9 @@
     }
 
     .footer .ft_left .ft_guide>ul>li a {
-        font-size: 14px;
+        display: block;
+        font-size: 4vw;
+        white-space: nowrap;
     }
 
     .footer .ft_left .ft_guide>ul>li~li::after {
