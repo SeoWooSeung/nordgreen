@@ -743,6 +743,7 @@
 @media (max-width:768px) {
 
     .footer {
+        padding: 20px 0 0 0;
         height: 580px;
         background: #1a1a1a;
     }
@@ -792,6 +793,6 @@
     }
 
     .footer .ft_right ul img {
-        width: 30px;
+        width: 80px;
     }
 }
