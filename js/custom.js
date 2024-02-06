@@ -1,11 +1,11 @@
 $(function () {
   $(".main_slide").slick({
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false,
     dots: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 1000,
+    autoplaySpeed: 1000,
     fade: true,
   });
 
