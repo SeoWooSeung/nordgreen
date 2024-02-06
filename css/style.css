@@ -10,6 +10,7 @@
     line-height: 90px;
     z-index: 999;
     background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .header .inner {
@@ -24,7 +25,7 @@
     display: flex;
     gap: 40px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .header .icon ul {
@@ -39,32 +40,9 @@
 }
 
 @media(max-width:768px) {
-    .mbt {
-        display: block;
-        position: fixed;
-        top: 30px;
-        right: 30px;
-        border: 1px solid #ddd;
-        width: 40px;
-        height: 40px;
-        background: transparent;
-    }
-
-    .mbt i {
-        font-size: 24px;
-        padding: 2px 0 0 0;
-    }
-}
-
-@media(max-width:768px) {
 
     .header {
         line-height: 90px;
-    }
-
-    h1.on {
-        position: fixed;
-        z-index: 999;
     }
 
     .header .gnb {
@@ -93,18 +71,36 @@
     .gnb>ul a {
         display: block;
         border-bottom: 1px solid #ddd;
+        font-size: 16px;
     }
 
     .header .icon {
+        display: none;
+    }
+
+    .mbt {
+        display: block;
         position: fixed;
-        left: 45vw;
-        transition: 0.5s;
+        top: 30px;
+        right: 15px;
+        border: 1px solid #ddd;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border-radius: 10px;
     }
 
-    .header .icon.on {
-        left: 30px;
-
+    .mbt i {
+        font-size: 24px;
+        padding: 2px 0 0 0;
     }
+
+    .header.on h1 {
+        position: fixed;
+        z-index: 1000;
+    }
+
+
 }
 
 
@@ -117,7 +113,7 @@
 
 .visual_slide .itm {
     position: relative;
-    height: 900px;
+    height: 100vh;
     width: 100%;
 }
 
@@ -148,13 +144,13 @@
 .visual_slide .slogan p {
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 28px 0;
+    margin: 0 0 18px 0;
 }
 
 .visual_slide .slogan strong {
     display: block;
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     margin: 0 0 60px 0;
     text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
@@ -193,7 +189,6 @@
     background: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     padding: 15px;
-
 }
 
 .visual_slide .arrows .left {
@@ -204,55 +199,37 @@
     right: 0;
 }
 
-.visual_slide .menu {
+.visual_slide .main_slide .slick-dots {
     position: absolute;
-    bottom: 40px;
+    bottom: 80px;
     left: 50%;
-    transform: translate(-10%, 0);
-    display: flex;
-    gap: 14px;
-    max-width: 1200px;
-    width: 100%;
-    /* padding: 0 15px; */
-    z-index: 999;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 0;
 }
 
-.visual_slide .menu li a {
-    position: relative;
-    display: block;
-    padding: 0 40px 0 0;
-    height: 14px;
-    color: #fff;
+.visual_slide .main_slide .slick-dots li {
+    display: inline-block;
+    margin: 0 12px 0 0;
 }
 
-.visual_slide .menu li a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    height: 6px;
+.visual_slide .main_slide .slick-dots button {
+    width: 60px;
+    height: 10px;
+    border: none;
     border-radius: 50px;
+}
+
+.visual_slide .main_slide .slick-dots li.slick-active button {
     background: #666;
-}
-
-.visual_slide .menu li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 6px;
-    border-radius: 50px;
-    background: #201214;
-}
-
-.visual_slide .menu li.on a::after {
-    transition: 4s;
-    width: 100%;
+    transition: 0.5s;
 }
 
 @media(max-width:768px) {
+
+    .visual_slide .main_slide .itm {
+        height: 700px;
+    }
 
     .visual_slide .main_slide .itm01 {
         background: url(../images/main_slide01.jpg)no-repeat center center/cover;
@@ -272,17 +249,19 @@
 
     .visual_slide .slogan {
         /* r */
-        left: 25%;
+        left: 23%;
+        text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
     }
 
     .visual_slide .slogan p {
         /* r */
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .visual_slide .slogan strong {
         /* r */
-        font-size: 4vw;
+        font-size: 18px;
+        font-weight: 500;
         margin: 0 0 24px 0;
     }
 
@@ -292,8 +271,18 @@
         padding: 14px 38px;
     }
 
+    .visual_slide .arrows {
+        top: 53%;
+    }
+
     .visual_slide .arrows i {
-        font-size: 4vw;
+        font-size: 18px;
+        transform: translate(0, -50%);
+        color: aliceblue;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        padding: 10px;
+        border-radius: 50%;
     }
 
     .visual_slide .arrows .left {
@@ -304,13 +293,30 @@
         right: 20px;
     }
 
-    .visual_slide .menu {
+    .visual_slide .main_slide .slick-dots {
+        position: absolute;
+        bottom: 30px;
         left: 50%;
-        transform: translate(-28%, 0);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 0;
     }
 
-    .visual_slide .menu {
-        text-align: center;
+    .visual_slide .main_slide .slick-dots li {
+        display: inline-block;
+        margin: 0 8px 0 0;
+    }
+
+    .visual_slide .main_slide .slick-dots button {
+        width: 30px;
+        height: 10px;
+        border: none;
+        border-radius: 50px;
+    }
+
+    .visual_slide .main_slide .slick-dots li.slick-active button {
+        background: #666;
+        transition: 0.5s;
     }
 }
 
@@ -334,17 +340,17 @@
 
 .visual_sub_slide .title h2 {
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 600;
     margin: 0 0 18px 0;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 .visual_sub_slide .title span {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #666;
-    margin: 0 0 72px 0;
+    margin: 0 0 48px 0;
 }
 
 
@@ -356,6 +362,7 @@
 
 .visual_sub_slide .sub_slide .itm figure>img {
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    margin: 0 0 16px 0;
 }
 
 
@@ -369,13 +376,14 @@
 
 .visual_sub_slide .sub_slide .itm strong {
     display: block;
-    padding: 18px 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 0 8px 0;
 }
 
 .visual_sub_slide .sub_slide .itm span {
     display: block;
     font-size: 14px;
-    font-weight: 400;
     color: #999;
     margin: 0 0 24px 0;
 }
@@ -412,10 +420,10 @@
 
 .visual_sub_slide .arrows {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 1500px;
+    max-width: 2500px;
     width: 100%;
     font-size: 50px;
     color: #666;
@@ -469,8 +477,6 @@
         margin: 0 0 72px 0;
     }
 
-
-
     .visual_sub_slide .sub_slide .itm {
         position: relative;
         margin: 0 15px 0 15px;
@@ -483,7 +489,7 @@
 
     .visual_sub_slide .sub_slide .itm a {
         position: absolute;
-        bottom: 90px;
+        bottom: 120px;
         right: -10px;
         transform: translate(-50%, -50%);
 
@@ -531,33 +537,31 @@
         padding: 2px 0 0 10px;
     }
 
-
     .visual_sub_slide .arrows {
         position: absolute;
-        top: 60%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        max-width: 1500px;
+        max-width: 300px;
         width: 100%;
         font-size: 50px;
         color: #666;
-
-        display: none;
+        z-index: 999;
     }
 
     .visual_sub_slide .arrows i {
         position: absolute;
-        font-size: 90px;
+        font-size: 40px;
         transform: translate(0, -50%);
         color: #000;
     }
 
     .visual_sub_slide .arrows .left {
-        left: -100px;
+        left: 0;
     }
 
     .visual_sub_slide .arrows .right {
-        right: -100px;
+        right: 0;
     }
 }
 
@@ -565,7 +569,7 @@
 
 .banner {
     position: relative;
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .banner .inner {
@@ -577,7 +581,7 @@
 .banner .title h2 {
     font-size: 32px;
     font-weight: 800;
-    margin: 0 0 80px 0;
+    margin: 0 0 48px 0;
     letter-spacing: -2px;
     text-align: center;
 }
@@ -587,17 +591,20 @@
     gap: 30px;
 }
 
+.banner .main_banner img {
+    margin: 0 0 16px 0;
+}
+
 .main_banner strong {
     display: block;
-    font-size: 28px;
-    font-weight: 500;
-    margin: 12px 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
 }
 
 .main_banner span {
     display: block;
     font-size: 16px;
-    font-weight: 500;
     color: #666;
 }
 
@@ -614,7 +621,7 @@
 
     .main_banner span {
         margin: 0 0 40px 0;
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
 }
@@ -644,10 +651,10 @@
 
 .review .title span {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #666;
-    margin: 0 0 72px 0;
+    margin: 0 0 48px 0;
 }
 
 .review .grid_box p {
@@ -658,12 +665,13 @@
 .review .inner .grid_box {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 40px;
+    grid-gap: 30px;
 }
+
 
 @media(max-width:768px) {
     .review .grid_box p {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .review .inner .grid_box {
@@ -676,8 +684,7 @@
 
 
 .footer {
-    position: sticky;
-    height: 580px;
+    padding: 80px 0;
     background: #1a1a1a;
 }
 
@@ -696,6 +703,7 @@
 .footer .ft_left .ft_guide>ul {
     display: flex;
     gap: 30px;
+    margin: 0 0 32px 0;
 }
 
 .footer .ft_left .ft_guide>ul>li {
@@ -792,9 +800,7 @@
         display: flex;
         gap: 20px;
         margin: 0 0 0 auto;
+        display: none;
     }
 
-    .footer .ft_right ul img {
-        width: 80px;
-    }
 }
